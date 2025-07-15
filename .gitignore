@@ -1,0 +1,42 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.orig
+
+# sinj ignore js generated scripts
+sinj/scripts/**/*.d.ts
+sinj/scripts/**/*.js
+
+*storybook.log
+*storybook-static
+
+ciam-components/coverage
+
+ciam-components/cypress/screenshots/*
+ciam-components/cypress/reports/*
+
+content-validator/**/*.js
+content-validator/**/*.xlsx
+
+.env
