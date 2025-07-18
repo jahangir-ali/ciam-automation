@@ -9,13 +9,23 @@ describe('registration spec', () => {
     cy.fillConfirmEmailAddress();
     cy.clickSubmitForgottenPassword();
     
-    cy.get('#forgotten-password-success').should('be.checked');
+    cy.get('#forgotten-password-success')
+    .should('be.checked');
     
   })
 
   it('should trigger "Forgotten Password Validation Error"', () => {
     //cy.fillEmailAddress();
     //cy.fillConfirmEmailAddress();
+    cy.clickSubmitForgottenPassword();
+    
+    cy.get('#forgotten-password-validation-error').should('be.checked');
+    
+  })
+ it('should trigger "Forgotten Password Validation Error; email not matching"', () => {
+    
+    cy.fillEmailAddress();
+    cy.fillNotMatchingEmail();
     cy.clickSubmitForgottenPassword();
     
     cy.get('#forgotten-password-validation-error').should('be.checked');

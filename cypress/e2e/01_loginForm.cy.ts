@@ -11,7 +11,7 @@ describe('registration spec', () => {
     //cy.fillEmailPassword();
     cy.fillEmailPassword();
     cy.fillKeepMeSignedIn();
-    cy.clickSubmit();
+    cy.clickAirlineSubmit();
 
     cy.get("#login-form-success").should('be.checked');
   })

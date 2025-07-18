@@ -14,4 +14,26 @@ describe('registration spec', () => {
     
   })
 
+
+ it('should trigger "Forgotten Password Success"', () => {
+    
+    cy.fillHolidayOutFunnelEmail();
+    cy.clickHolidayOutFunnelConfirm();
+    
+    cy.get('#forgotten-password-success',)
+    .should('be.checked');
+    
+    //Should receive Forgotten Password Reset email
+    //From donotreply@easyjet.com
+
+  })
+  
+   it('should trigger "Forgotten Password No Account Error"', () => {
+    
+    cy.fillHolidayOutFunnelInvalidEmail();
+    cy.clickHolidayOutFunnelConfirm();
+    
+    cy.verifyErrorMessage();
+    
+  })
 })

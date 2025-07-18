@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 
+import cypress = require("cypress");
 import { get } from "cypress/types/lodash";
 
 const withinAirline = (callback: () => void) => {
@@ -31,22 +32,26 @@ const withinHolidayOutFunnel = (callback: () => void) => {
 
 Cypress.Commands.add('fillEmailAddress', () => {
     withinAirline(() => {
-        cy.get("#email").type('jahangir.ali@easyjet.com');
+        cy.get("#email")
+        .type('jahangir.ali@easyjet.com');
 
     });
 })
 
 Cypress.Commands.add('fillConfirmEmailAddress', () => {
     withinAirline(() => {
-        cy.get("#confirmEmail").type('jahangir.ali@easyjet.com');
+        cy.get("#confirmEmail")
+        .type('jahangir.ali@easyjet.com');
 
     });
 })
 
 Cypress.Commands.add('fillEmailPassword', () => {
     withinAirline(() => {
-        cy.get("#email").type('jahangir.ali@easyjet.com');
-        cy.get("#password").type('Testing1234567890');
+        cy.get("#email")
+        .type('jahangir.ali@easyjet.com');
+        cy.get("#password")
+        .type('Testing1234567890');
 
     });
 })
@@ -67,6 +72,14 @@ Cypress.Commands.add('fillInvalidPassword', () => {
     });
 })
 
+Cypress.Commands.add('fillNotMatchingEmail', () => {
+    withinAirline(() => {
+       cy.get("#confirmEmail").type('test.test@easyjet.com');
+       
+    });
+})
+
+
 Cypress.Commands.add('fillConfirmEmailPassword', () => {
     withinAirline(() => {
         //cy.get("#email").type('jahangir.ali@easyjet.com');
@@ -84,8 +97,8 @@ Cypress.Commands.add('fillKeepMeSignedIn', () => {
 })
 
 
-Cypress.Commands.add('clickSubmit', () => {
-    withinHolidayBooking(() => {
+Cypress.Commands.add('clickAirlineSubmit', () => {
+    withinAirline(() => {
         cy.get('button[type="submit"]').click();
 
     })
@@ -193,5 +206,38 @@ Cypress.Commands.add('fillHolidayOutFunnelEmail', () => {
     withinHolidayOutFunnel(() => {
         cy.get('#email')
         .type('jahangir.ali@easyjet.com');
+    })
+});
+
+Cypress.Commands.add('fillHolidayOutFunnelInvalidEmail', () => {
+    withinHolidayOutFunnel(() => {
+        cy.get('#email')
+        .type('test.one@easyjet.com');
+    })
+});
+
+Cypress.Commands.add('clickHolidayOutFunnelConfirm', () => {
+    withinHolidayOutFunnel(() => {
+        cy.get('[aria-label="Confirm"]')
+        .click();
+    })
+});
+
+
+Cypress.Commands.add('clickHolidayInFunnelLoginContinue', () => {
+    withinHolidayBooking(() => {
+        cy.get('[type="submit"]')
+        .click();
+    })
+});
+
+
+//Verify Error Messages
+
+Cypress.Commands.add('verifyErrorMessage', ()=>{
+    withinHolidayOutFunnel(() => {
+        cy.get('span.field-error__content-message > p')
+        .should('be.visible')
+        .contains('To reset your password you need to have an account. Please')
     })
 });

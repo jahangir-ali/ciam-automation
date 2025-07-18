@@ -25,9 +25,10 @@ declare global {
     fillIncorrectPassword(): Chainable<any>;
     fillInvalidPassword(): Chainable<any>;
     fillEmailPassword(): Chainable<any>;
+    fillNotMatchingEmail(): Chainable<any>;
     fillConfirmEmailPassword():Chainable<any>;
     fillKeepMeSignedIn(): Chainable<any>;
-    clickSubmit(): Chainable<any>;
+    clickAirlineSubmit(): Chainable<any>;
     clickSubmitForgottenPassword(): Chainable<any>;
     clickCancel(): Chainable<any>;
     fillHolidayLoginEmail(): Chainable<any>;
@@ -40,6 +41,11 @@ declare global {
     clickHolidayInFunnelCancel(): Chainable<any>
     clickHolidayInFunnelSubmit(): Chainable<any>
     clickHolidayOutFunnelCancel(): Chainable<any>
+    fillHolidayOutFunnelEmail(): Chainable<any>
+    fillHolidayOutFunnelInvalidEmail(): Chainable<any>
+    clickHolidayOutFunnelConfirm(): Chainable<any>
+    clickHolidayInFunnelLoginContinue(): Chainable<any>
+    verifyErrorMessage(): Chainable<any>
     }
   }
 }

@@ -6,12 +6,12 @@ describe('registration spec', () => {
   })
 
 
-  it('should trigger "Forgotten Password Cancel Button Click"', () => {
+  it('should trigger "login Continue Without Sign In"', () => {
     
-    //cy.clickCancel();
+      cy.fillHolidayLoginEmail();
+
+      cy.clickHolidayInFunnelLoginContinue().click();
     
-    //cy.get('#email').should('be.checked');
-    cy.fillHolidayLoginEmail();
     
   })
 
