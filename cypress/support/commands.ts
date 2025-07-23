@@ -135,13 +135,22 @@ Cypress.Commands.add('clickCancel', () => {
 
 Cypress.Commands.add('fillHolidayLoginEmail', ()=> {
     withinHolidayBooking(() => {
-        cy.get('#email').type('jahangir.ali@easyjet.com');
+        cy.get('#email')
+        .type('jahangir.ali@easyjet.com');
+    })
+});
+
+Cypress.Commands.add('fillHolidayLoginNoAccountEmail', ()=> {
+    withinHolidayBooking(() => {
+        cy.get('#email')
+        .type('test.test@easyjet.com');
     })
 });
 
 Cypress.Commands.add('clickCancelHoliday', () => {
     withinHoliday(() => {
-        cy.get('[aria-label="Cancel"]').click();
+        cy.get('[aria-label="Cancel"]')
+        .click();
     })
 });
 
@@ -226,7 +235,7 @@ Cypress.Commands.add('clickHolidayOutFunnelConfirm', () => {
 
 Cypress.Commands.add('clickHolidayInFunnelLoginContinue', () => {
     withinHolidayBooking(() => {
-        cy.get('[type="submit"]')
+        cy.get('.button button--primary')
         .click();
     })
 });

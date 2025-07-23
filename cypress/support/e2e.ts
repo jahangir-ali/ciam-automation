@@ -32,6 +32,7 @@ declare global {
     clickSubmitForgottenPassword(): Chainable<any>;
     clickCancel(): Chainable<any>;
     fillHolidayLoginEmail(): Chainable<any>;
+    fillHolidayLoginNoAccountEmail(): Chainable<any>;
     clickCancelHoliday(): Chainable<any>;
     clickConfirmHoliday(): Chainable<any>;
     fillEarlyEmail(): Chainable<any>;
