@@ -2,7 +2,7 @@ describe('registration spec', () => {
   beforeEach(() => {
     cy.visit("https://uat2.tc-nonprod.easyjet.com/ciam/website/index.html");
     cy.window().clearCookies();
-    cy.get("#forgotten-password-holiday-with-email-populated").click();
+    cy.get("#forgotten-password-holiday-out-funnel-with-email-populated").click();
   })
 
 
@@ -10,7 +10,8 @@ describe('registration spec', () => {
     
     cy.clickCancelHoliday();
 
-    cy.get('#forgotten-password-cancel-button').should('be.checked');
+    cy.get('#forgotten-password-cancel-button')
+    .should('be.checked');
     
   })
 
@@ -18,7 +19,8 @@ describe('registration spec', () => {
     
     cy.clickConfirmHoliday();
     
-    cy.get('#forgotten-password-success').should('be.checked');
+    cy.get('#forgotten-password-success')
+    .should('be.checked');
 
   })
 

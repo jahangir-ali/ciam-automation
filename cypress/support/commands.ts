@@ -148,15 +148,20 @@ Cypress.Commands.add('fillHolidayLoginNoAccountEmail', ()=> {
 });
 
 Cypress.Commands.add('clickCancelHoliday', () => {
-    withinHoliday(() => {
+    withinHolidayOutFunnel(() => {
         cy.get('[aria-label="Cancel"]')
         .click();
     })
 });
 
 Cypress.Commands.add('clickConfirmHoliday', () => {
-    withinHoliday(() => {
-        cy.get('[aria-label="Confirm"]').click();
+    withinHolidayOutFunnel(() => {
+        cy.get('#email')
+        .focus()
+        .clear()
+        .type('jahangir.ali@easyjet.com')
+        cy.get('[aria-label="Confirm"]')
+        .click();
     })
 });
 
