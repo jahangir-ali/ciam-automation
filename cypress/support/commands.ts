@@ -143,7 +143,7 @@ Cypress.Commands.add('fillHolidayLoginEmail', ()=> {
 Cypress.Commands.add('fillHolidayLoginNoAccountEmail', ()=> {
     withinHolidayBooking(() => {
         cy.get('#email')
-        .type('test.test@easyjet.com');
+        .type('test.test@test.com');
     })
 });
 
@@ -232,14 +232,19 @@ Cypress.Commands.add('clickHolidayOutFunnelConfirm', () => {
     })
 });
 
-
 Cypress.Commands.add('clickHolidayInFunnelLoginContinue', () => {
     withinHolidayBooking(() => {
-        cy.get('.button button--primary')
+        cy.get('[type="submit"]')
         .click();
     })
 });
 
+Cypress.Commands.add('clickContinueWithoutSignIn', () => {
+    withinHolidayBooking(() => {
+        cy.get('.continueSignIn')
+        .click();
+    })
+});
 
 //Verify Error Messages
 

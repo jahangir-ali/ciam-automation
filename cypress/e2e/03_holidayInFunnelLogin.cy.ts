@@ -17,12 +17,15 @@ describe('registration spec', () => {
   })
 
   */
- it('should trigger "Login Email Not Found"', () => {
+ it('should trigger "Login Continue without Sign In"', () => {
     
       cy.fillHolidayLoginNoAccountEmail();
 
       cy.clickHolidayInFunnelLoginContinue()
-      .click();
+      
+      
+      
+
       cy.get('#login-form-email-not-found')
       .should('be.checked');
     

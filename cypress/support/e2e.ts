@@ -47,6 +47,7 @@ declare global {
     clickHolidayOutFunnelConfirm(): Chainable<any>
     clickHolidayInFunnelLoginContinue(): Chainable<any>
     verifyErrorMessage(): Chainable<any>
+    clickContinueWithoutSignIn(): Chainable<any>
     }
   }
 }
