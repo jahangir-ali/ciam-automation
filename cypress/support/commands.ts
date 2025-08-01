@@ -64,9 +64,9 @@ Cypress.Commands.add('fillIncorrectPassword', () => {
     });
 })
 
-Cypress.Commands.add('fillInvalidPassword', () => {
+Cypress.Commands.add('fillInvalidCommonPassword', () => {
     withinAirline(() => {
-        //cy.get("#email").type('jahangir.ali@easyjet.com');
+        
         cy.get("#password").type('%TGB^YHN5tgb6yhn');
 
     });
@@ -251,6 +251,13 @@ Cypress.Commands.add('clickContinueWithoutSignIn', () => {
     })
 });
 
+Cypress.Commands.add('clickRegisterNowButton', () => {
+    withinAirline(() => {
+        
+        cy.get('.button.button--primary.airline-form__submit-button').click();
+    });
+});
+
 //Verify Error Messages
 
 Cypress.Commands.add('verifyErrorMessage', ()=>{
@@ -260,3 +267,4 @@ Cypress.Commands.add('verifyErrorMessage', ()=>{
         .contains('To reset your password you need to have an account. Please')
     })
 });
+

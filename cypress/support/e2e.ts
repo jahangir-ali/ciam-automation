@@ -23,7 +23,7 @@ declare global {
     fillConfirmEmailAddress(): Chainable<any>;
     fillRegistrationForm(): Chainable<any>;
     fillIncorrectPassword(): Chainable<any>;
-    fillInvalidPassword(): Chainable<any>;
+    fillInvalidCommonPassword(): Chainable<any>;
     fillEmailPassword(): Chainable<any>;
     fillNotMatchingEmail(): Chainable<any>;
     fillConfirmEmailPassword():Chainable<any>;
@@ -48,6 +48,7 @@ declare global {
     clickHolidayInFunnelLoginContinue(): Chainable<any>
     verifyErrorMessage(): Chainable<any>
     clickContinueWithoutSignIn(): Chainable<any>
+    clickRegisterNowButton(): Chainable<any>
     }
   }
 }
