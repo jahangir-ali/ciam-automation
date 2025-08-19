@@ -16,7 +16,7 @@ describe('registration spec', () => {
 
 
 it('should trigger "common/ easily guessable password"', () => {
-    cy.fillInvalidPassword();
+    cy.fillInvalidCommonPassword();
     cy.clickRegisterNowButton();
     
     cy.get('#registration-form-validation-error')
