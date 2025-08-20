@@ -68,6 +68,7 @@ Cypress.Commands.add('fillInvalidCommonPassword', () => {
     withinAirline(() => {
         
         cy.get("#password").type('%TGB^YHN5tgb6yhn');
+        
 
     });
 })

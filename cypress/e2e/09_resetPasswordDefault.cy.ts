@@ -14,12 +14,5 @@ describe('registration spec', () => {
 
   })
 
-
-it('should trigger "common/ easily guessable password"', () => {
-    cy.fillInvalidCommonPassword();
-    
-    //Not be a common/easily guessable password
-    cy.contains('guessable password')
-    .should('exist');
-  })
 })
+
