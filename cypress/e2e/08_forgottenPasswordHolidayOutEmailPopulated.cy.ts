@@ -12,7 +12,6 @@ describe('registration spec', () => {
 
     cy.get('#forgotten-password-cancel-button')
     .should('be.checked');
-    
   })
 
   it('should trigger "Forgotten Password Success"', () => {
@@ -21,7 +20,6 @@ describe('registration spec', () => {
     
     cy.get('#forgotten-password-success')
     .should('be.checked');
-
   })
 
 })
