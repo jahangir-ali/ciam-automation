@@ -49,6 +49,7 @@ declare global {
     verifyErrorMessage(): Chainable<any>
     clickContinueWithoutSignIn(): Chainable<any>
     clickRegisterNowButton(): Chainable<any>
+    clickForgottenYourDetailsLink(): Chainable<any>
     }
   }
 }

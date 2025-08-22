@@ -15,5 +15,13 @@ describe('registration spec', () => {
 
     cy.get("#login-form-success").should('be.checked');
   })
+it('should trigger "Login Forgotten Password Link Click"', () => {
+
+cy.clickForgottenYourDetailsLink();
+
+cy.get('#login-form-forgotten-password-link-click').should('be.checked');
+
+})
+
 })
 

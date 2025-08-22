@@ -259,6 +259,13 @@ Cypress.Commands.add('clickRegisterNowButton', () => {
     });
 });
 
+Cypress.Commands.add('clickForgottenYourDetailsLink', () => {
+    withinAirline(() => {
+        
+        cy.get('#forgotten-password-link').click();
+    });
+});
+
 //Verify Error Messages
 
 Cypress.Commands.add('verifyErrorMessage', ()=>{
@@ -268,4 +275,6 @@ Cypress.Commands.add('verifyErrorMessage', ()=>{
         .contains('To reset your password you need to have an account. Please')
     })
 });
+
+
 
