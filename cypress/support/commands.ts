@@ -160,6 +160,7 @@ Cypress.Commands.add('clickConfirmHoliday', () => {
         cy.get('#email')
         .focus()
         .clear()
+        .type('{selectall}{backspace}')
         .type('jahangir.ali@easyjet.com')
         cy.get('[aria-label="Confirm"]')
         .click();
