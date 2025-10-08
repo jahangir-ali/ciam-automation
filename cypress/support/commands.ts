@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-
+// Forms
 import cypress = require("cypress");
 import { get } from "cypress/types/lodash";
 
@@ -27,13 +27,16 @@ const withinHolidayOutFunnel = (callback: () => void) => {
     cy.get("[variant=holiday-out-funnel]").shadow().within(callback);
 };
 
+const withinAirlineForm = (callback: () => void) => {
+    cy.get("[id=main-component-container]").shadow().within(callback);
+};
 
 /* COMMANDS */
 
 Cypress.Commands.add('fillEmailAddress', () => {
     withinAirline(() => {
         cy.get("#email")
-        .type('jahangir.ali@easyjet.com');
+            .type('jahangir.ali@easyjet.com');
 
     });
 })
@@ -41,17 +44,18 @@ Cypress.Commands.add('fillEmailAddress', () => {
 Cypress.Commands.add('fillConfirmEmailAddress', () => {
     withinAirline(() => {
         cy.get("#confirmEmail")
-        .type('jahangir.ali@easyjet.com');
+            .type('jahangir.ali@easyjet.com');
 
     });
 })
 
 Cypress.Commands.add('fillEmailPassword', () => {
     withinAirline(() => {
+        cy.get('h1').contains('HELLO');
         cy.get("#email")
-        .type('jahangir.ali@easyjet.com');
+            .type('jahangir.ali@easyjet.com');
         cy.get("#password")
-        .type('Testing1234567890');
+            .type('Testing1234567890');
 
     });
 })
@@ -66,17 +70,17 @@ Cypress.Commands.add('fillIncorrectPassword', () => {
 
 Cypress.Commands.add('fillInvalidCommonPassword', () => {
     withinAirline(() => {
-        
+
         cy.get("#password").type('%TGB^YHN5tgb6yhn');
-        
+
 
     });
 })
 
 Cypress.Commands.add('fillNotMatchingEmail', () => {
     withinAirline(() => {
-       cy.get("#confirmEmail").type('test.test@easyjet.com');
-       
+        cy.get("#confirmEmail").type('test.test@easyjet.com');
+
     });
 })
 
@@ -134,36 +138,36 @@ Cypress.Commands.add('clickCancel', () => {
     })
 });
 
-Cypress.Commands.add('fillHolidayLoginEmail', ()=> {
+Cypress.Commands.add('fillHolidayLoginEmail', () => {
     withinHolidayBooking(() => {
         cy.get('#email')
-        .type('jahangir.ali@easyjet.com');
+            .type('jahangir.ali@easyjet.com');
     })
 });
 
-Cypress.Commands.add('fillHolidayLoginNoAccountEmail', ()=> {
+Cypress.Commands.add('fillHolidayLoginNoAccountEmail', () => {
     withinHolidayBooking(() => {
         cy.get('#email')
-        .type('test.test@test.com');
+            .type('test.test@test.com');
     })
 });
 
 Cypress.Commands.add('clickCancelHoliday', () => {
     withinHolidayOutFunnel(() => {
         cy.get('[aria-label="Cancel"]')
-        .click();
+            .click();
     })
 });
 
 Cypress.Commands.add('clickConfirmHoliday', () => {
     withinHolidayOutFunnel(() => {
         cy.get('#email')
-        .focus()
-        .clear()
-        .type('{selectall}{backspace}')
-        .type('jahangir.ali@easyjet.com')
+            .focus()
+            .clear()
+            .type('{selectall}{backspace}')
+            .type('jahangir.ali@easyjet.com')
         cy.get('[aria-label="Confirm"]')
-        .click();
+            .click();
     })
 });
 
@@ -171,28 +175,28 @@ Cypress.Commands.add('clickConfirmHoliday', () => {
 Cypress.Commands.add('fillEarlyEmail', () => {
     withinAirlineEarlyLogin(() => {
         cy.get('#email')
-        .type('jahangir.ali@easyjet.com');
+            .type('jahangir.ali@easyjet.com');
     })
 });
 
 Cypress.Commands.add('fillEarlyPassword', () => {
     withinAirlineEarlyLogin(() => {
         cy.get('#password')
-        .type('Testing1234567890');
+            .type('Testing1234567890');
     })
 });
 
 Cypress.Commands.add('clickEarlySignIn', () => {
     withinAirlineEarlyLogin(() => {
         cy.get('[aria-label="Sign in"]')
-        .click();
+            .click();
     })
 });
 
 Cypress.Commands.add('clickEarlyKeepMeSignedIn', () => {
     withinAirlineEarlyLogin(() => {
         cy.get('#keepMeSignedIn')
-        .click();
+            .click();
     })
 });
 
@@ -200,82 +204,99 @@ Cypress.Commands.add('clickEarlyKeepMeSignedIn', () => {
 Cypress.Commands.add('clickHolidayInFunnelCancel', () => {
     withinHolidayInFunnel(() => {
         cy.get('[aria-label="Cancel"]')
-        .click();
+            .click();
     })
 });
 
 Cypress.Commands.add('clickHolidayInFunnelSubmit', () => {
     withinHolidayInFunnel(() => {
         cy.get('[aria-label="Confirm"]')
-        .click();
+            .click();
     })
 });
 
 Cypress.Commands.add('clickHolidayOutFunnelCancel', () => {
     withinHolidayOutFunnel(() => {
         cy.get('[aria-label="Cancel"]')
-        .click();
+            .click();
     })
 });
 
 Cypress.Commands.add('fillHolidayOutFunnelEmail', () => {
     withinHolidayOutFunnel(() => {
         cy.get('#email')
-        .type('jahangir.ali@easyjet.com');
+            .type('jahangir.ali@easyjet.com');
     })
 });
 
 Cypress.Commands.add('fillHolidayOutFunnelInvalidEmail', () => {
     withinHolidayOutFunnel(() => {
         cy.get('#email')
-        .type('test.one@easyjet.com');
+            .type('test.one@easyjet.com');
     })
 });
 
 Cypress.Commands.add('clickHolidayOutFunnelConfirm', () => {
     withinHolidayOutFunnel(() => {
         cy.get('[aria-label="Confirm"]')
-        .click();
+            .click();
     })
 });
 
 Cypress.Commands.add('clickHolidayInFunnelLoginContinue', () => {
     withinHolidayBooking(() => {
         cy.get('[type="submit"]')
-        .click();
+            .click();
     })
 });
 
 Cypress.Commands.add('clickContinueWithoutSignIn', () => {
     withinHolidayBooking(() => {
         cy.get('.continueSignIn')
-        .click();
+            .click();
     })
 });
 
 Cypress.Commands.add('clickRegisterNowButton', () => {
     withinAirline(() => {
-        
+
         cy.get('.button.button--primary.airline-form__submit-button').click();
     });
 });
 
 Cypress.Commands.add('clickForgottenYourDetailsLink', () => {
     withinAirline(() => {
-        
+
         cy.get('#forgotten-password-link').click();
     });
 });
 
 //Verify Error Messages
 
-Cypress.Commands.add('verifyErrorMessage', ()=>{
+Cypress.Commands.add('verifyErrorMessage', () => {
     withinHolidayOutFunnel(() => {
         cy.get('span.field-error__content-message > p')
-        .should('be.visible')
-        .contains('To reset your password you need to have an account. Please')
-    })
+            .should('be.visible')
+            .contains('To reset your password you need to have an account. Please')
+    });
 });
 
+
+Cypress.Commands.add('verifyMFAText', () => {
+    withinAirline(() => {        
+        cy.get("div.info-box > div.info-box__content > p").contains('When you register for an account, Multi-Factor (MFA) will be automatically enabled. MFA adds an extra layer of security to your account by requiring a One-Time Passcode (OTP) to help prevent unauthorised access. You can disable MFA in your account settings at any time.');
+        
+        
+
+    });
+});
+
+Cypress.Commands.add('verifyMFAauthenticateTitle', () => {
+    withinAirline(() => {
+        cy.get('h1').contains('HELLO WORLD');
+
+    });
+
+});
 
 

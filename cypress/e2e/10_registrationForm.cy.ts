@@ -8,18 +8,31 @@ describe('registration spec', () => {
     cy.fillEmailPassword();
     cy.fillConfirmEmailPassword();
     cy.fillRegistrationForm();
-    
+
     cy.get('#registration-form-validation-error')
-    .should('be.checked');
+      .should('be.checked');
 
   })
 
 
-it('should trigger "common/ easily guessable password"', () => {
+  it('should trigger "common/ easily guessable password"', () => {
     cy.fillInvalidCommonPassword();
     cy.clickRegisterNowButton();
-    
+
     cy.get('#registration-form-validation-error')
-    .should('be.checked');
+      .should('be.checked');
   })
+
+  it.only('should display MFA Text', () => {
+    cy.verifyMFAText();
+  })
+
+  it.only('should display MFA authenticate title', () => {
+    cy.verifyMFAauthenticateTitle();
+  })
+
+  
+
 })
+
+
