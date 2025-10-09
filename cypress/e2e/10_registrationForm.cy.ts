@@ -2,6 +2,7 @@ describe('registration spec', () => {
   beforeEach(() => {
     cy.visit("https://uat2.tc-nonprod.easyjet.com/ciam/website/index.html");
     cy.window().clearCookies();
+    cy.viewport(1280, 1920)
     cy.get("#registration-form").click();
   })
   it('should trigger "Registration Validation Error"', () => {
@@ -23,11 +24,11 @@ describe('registration spec', () => {
       .should('be.checked');
   })
 
-  it.only('should display MFA Text', () => {
+  it('should display MFA Text', () => {
     cy.verifyMFAText();
   })
 
-  it.only('should display MFA authenticate title', () => {
+  it('should display MFA authenticate title', () => {
     cy.verifyMFAauthenticateTitle();
   })
 
