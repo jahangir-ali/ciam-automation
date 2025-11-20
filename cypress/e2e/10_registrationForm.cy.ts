@@ -2,7 +2,7 @@ describe('registration spec', () => {
   beforeEach(() => {
     cy.visit("https://uat2.tc-nonprod.easyjet.com/ciam/website/index.html");
     cy.window().clearCookies();
-    cy.viewport(1280, 1920)
+    cy.viewport(1280, 1080)
     cy.get("#registration-form").click();
   })
   it('should trigger "Registration Validation Error"', () => {
