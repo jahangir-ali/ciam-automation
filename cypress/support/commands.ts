@@ -297,6 +297,13 @@ Cypress.Commands.add('verifyMFAauthenticateTitle', () => {
 
     });
 
+Cypress.Commands.add('fillRegistrationFormAirlineForm', ()=> {
+    withinAirline(()=> {
+        cy.get('#email')
+        .type('jahangir.ali@easyjet.com');
+    })
+});
+
 });
 
 

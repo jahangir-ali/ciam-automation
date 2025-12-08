@@ -3,12 +3,11 @@ describe('registration spec', () => {
     cy.visit("https://www.easyjet.com/en/register");
     cy.window().clearCookies();
     cy.viewport(1280, 1080)
-    
+ 
   })
 
   it('should confirm correct url', () => {
     cy.url().should('eq', 'https://www.easyjet.com/en/register')
-    
 
   })
 
@@ -17,13 +16,14 @@ describe('registration spec', () => {
     //cy.on('window:confirm', () => true)
     cy.get('#ensCloseBanner').click()
     //cy.get('cy.get('').should('exist')
-
   })
+
+  it('should fill registration form', () => {
+       cy.get('#ensCloseBanner').click()
+    cy.fillRegistrationForm()
+  })
+
 /*
-  it('should display MFA Text', () => {
-    cy.verifyMFAText();
-  })
-
   it('should display MFA authenticate title', () => {
     cy.verifyMFAauthenticateTitle();
   })

@@ -53,6 +53,7 @@ declare global {
       verifyRegFormComponentTitle(): Chainable<any>
       verifyMFAauthenticateTitle(): Chainable<any>
       verifyMFAText(): Chainable<any>
+      //fillRegistrationFormAirlineForm(): Chainable<any>
 
     }
   }
