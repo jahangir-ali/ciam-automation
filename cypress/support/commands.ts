@@ -297,7 +297,7 @@ Cypress.Commands.add('verifyMFAauthenticateTitle', () => {
 
     });
 
-Cypress.Commands.add('fillRegistrationFormAirlineForm', ()=> {
+Cypress.Commands.add('fillRegistrationForm', ()=> {
     withinAirline(()=> {
         cy.get('#email')
         .type('jahangir.ali@easyjet.com');
