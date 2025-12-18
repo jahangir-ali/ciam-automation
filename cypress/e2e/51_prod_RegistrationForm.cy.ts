@@ -49,15 +49,12 @@ describe('registration spec', () => {
     
     cy.get('#confirmEmail', { includeShadowDom: true})
     .type('jahangir.ali@easyjet.com');
-    cy.press(Cypress.Keyboard.Keys.TAB)
     
-
-    //cy.get('button.btn.btn--primary.btn--lg[type="submit"]', { includeShadowDom: true})
-    //.type('{enter}');
-    //.click({ force: true });
-cy.get('button.btn.btn--primary.btn--lg[type="submit"]')
-  .focus()
-  .type('{enter}', { force: true });
+    cy.get('#confirmEmail', { includeShadowDom: true})
+    .type('{enter}', { force: true })
+  
+    cy.get('.modal__content > .btn').click();
+   
 
  })
 
