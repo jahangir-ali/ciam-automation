@@ -37,7 +37,7 @@ describe('registration spec', () => {
 
 
   })
-
+/*
     it('should click send reset email', () => {
     cy.get('#ensCloseBanner').click()
     cy.get('[data-testid="desktop-header-main-menu-test-id"] > .header-main-menu__right-section > .sign-in-button-wrapper > .sign-in-button > .sign-in-button__label').click();
@@ -57,6 +57,56 @@ describe('registration spec', () => {
    
 
  })
+*/
+
+ it('should verify Find Booking errors are displayed', () => {
+    cy.get('#ensCloseBanner').click()
+    cy.get('[data-testid="desktop-header-main-menu-test-id"] > .header-main-menu__right-section > .sign-in-button-wrapper > .sign-in-button > .sign-in-button__label').click();
+        
+    //switches to FindBooking tab
+    cy.get('#react-tabs-4').click();
+
+    cy.get('#react-tabs-5 > form > .btn').click();
+
+    cy.get(':nth-child(2) > .field-error > .field-error__message')
+    .should('have.text', 'Please enter the surname of one of your passengers')
+
+    cy.get(':nth-child(3) > .field-error > .field-error__message')
+    .should('have.text', 'Please enter a valid booking reference to find your booking') 
+
+    cy.get('.inline-error__message')
+    .should('have.text', 'You must confirm that you have permission to manage this booking to proceed') 
+
+ })
+
+it('should tick the check box in Find Booking', () => {
+    cy.get('#ensCloseBanner').click()
+    cy.get('[data-testid="desktop-header-main-menu-test-id"] > .header-main-menu__right-section > .sign-in-button-wrapper > .sign-in-button > .sign-in-button__label').click();
+
+    //switches to FindBooking tab
+    cy.get('#react-tabs-4').click();
+
+    cy.get('#FIND_BOOKING_CHECKBOX_DATA_ID')
+    .check()
+    .should('be.checked');
+
+  })
+
+  it('should attempt to login with expired booking', () => {
+    cy.get('#ensCloseBanner').click()
+    cy.get('[data-testid="desktop-header-main-menu-test-id"] > .header-main-menu__right-section > .sign-in-button-wrapper > .sign-in-button > .sign-in-button__label').click();
+
+    //switches to FindBooking tab
+    cy.get('#react-tabs-4').click();
+    cy.press(Cypress.Keyboard.Keys.TAB);
+    cy.type('WPS');
+
+    cy.get('#FIND_BOOKING_CHECKBOX_DATA_ID')
+    .check()
+    .should('be.checked');
+
+    //kb6hb23
+  })
 
 })
 
