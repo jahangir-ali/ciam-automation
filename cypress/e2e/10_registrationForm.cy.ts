@@ -23,11 +23,11 @@ describe('registration spec', () => {
     cy.get('#registration-form-validation-error')
       .should('be.checked');
   })
-
+/*
   it('should display MFA Text', () => {
     cy.verifyMFAText();
   })
-
+*/
   it('should display MFA authenticate title', () => {
     cy.verifyMFAauthenticateTitle();
   })

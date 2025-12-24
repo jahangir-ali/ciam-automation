@@ -15,6 +15,21 @@ describe('registration spec', () => {
 
   })
 
+ it.only('should display email field error', () => {
+  cy.get('#ensCloseBanner').click() 
+   
+  cy.get('#email')
+    .type('test.com')
+
+    cy.press(Cypress.Keyboard.Keys.TAB)
+
+    cy.get('.field-error__content-message')
+    .should('exist')
+    .and('be.visible')
+
+  })
+
+
 /*
   it('should accept the confirmation on popup modal', () => {
     //cy.on('window:confirm', () => true)
@@ -97,16 +112,51 @@ it('should tick the check box in Find Booking', () => {
     cy.get('[data-testid="desktop-header-main-menu-test-id"] > .header-main-menu__right-section > .sign-in-button-wrapper > .sign-in-button > .sign-in-button__label').click();
 
     //switches to FindBooking tab
-    cy.get('#react-tabs-4').click();
-    cy.press(Cypress.Keyboard.Keys.TAB);
-    cy.type('WPS');
+    cy.get('#react-tabs-4')
+    .click();
+
+    cy.get('#e06e8463-b891-4fd6-af95-a5fd3d881b3f')
+   .click() 
+    //Inserts Surname
+    .type('WPS');
+
+    //Inserts booking reference
+    cy.get('#028aaaf0-fa09-45db-ab06-21a55646609c')
+    .type('kb6hb23')
 
     cy.get('#FIND_BOOKING_CHECKBOX_DATA_ID')
     .check()
     .should('be.checked');
 
-    //kb6hb23
+    //Clicks Find Booking button
+    cy.get('#react-tabs-5 > form > .btn')
+    .click();
+    
   })
+
+
+ it('should attempt to login with incorrect password', () => {
+    cy.get('#ensCloseBanner').click()
+    cy.get('[data-testid="desktop-header-main-menu-test-id"] > .header-main-menu__right-section > .sign-in-button-wrapper > .sign-in-button > .sign-in-button__label').click();
+
+    //email
+    cy.get('#422a73e2-dc73-44f0-a458-d92da49b8502')
+    .type('jahangir.ali@easyjet.com')
+
+    //pswd
+    cy.get('#6838ac1e-0be0-4b4e-b676-5cd0c04fe41e')
+    .type('Testing123456789')
+
+    //clicksubmit
+    cy.get('#react-tabs-7 > form > .btn')
+    .click();
+})
+
+it('should login successfully', () => {
+    cy.get('#ensCloseBanner').click()
+    cy.get('[data-testid="desktop-header-main-menu-test-id"] > .header-main-menu__right-section > .sign-in-button-wrapper > .sign-in-button > .sign-in-button__label').click();
+     
+})
 
 })
 

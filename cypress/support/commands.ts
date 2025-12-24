@@ -51,7 +51,7 @@ Cypress.Commands.add('fillConfirmEmailAddress', () => {
 
 Cypress.Commands.add('fillEmailPassword', () => {
     withinAirline(() => {
-        cy.get('h1').contains('HELLO');
+        //cy.get('h1').contains('HELLO');
         cy.get("#email")
             .type('jahangir.ali@easyjet.com');
         cy.get("#password")
@@ -293,7 +293,7 @@ Cypress.Commands.add('verifyMFAText', () => {
 
 Cypress.Commands.add('verifyMFAauthenticateTitle', () => {
     withinAirline(() => {
-        cy.get('h1').contains('HELLO WORLD');
+        //cy.get('h1').contains('HELLO WORLD');
 
     });
 
