@@ -284,9 +284,7 @@ Cypress.Commands.add('verifyErrorMessage', () => {
 
 Cypress.Commands.add('verifyMFAText', () => {
     withinAirline(() => {        
-        cy.get("div.info-box > div.info-box__content > p").contains('When you register for an account, Multi-Factor (MFA) will be automatically enabled. MFA adds an extra layer of security to your account by requiring a One-Time Passcode (OTP) to help prevent unauthorised access. You can disable MFA in your account settings at any time.');
-        
-        
+        cy.get("div.info-box > div.info-box__content > p").contains('When you register for an account, Multi-Factor (MFA) will be automatically enabled. MFA adds an extra layer of security to your account by requiring a One-Time Passcode (OTP) to help prevent unauthorised access. You can disable MFA in your account settings at any time.');        
 
     });
 });
@@ -296,14 +294,15 @@ Cypress.Commands.add('verifyMFAauthenticateTitle', () => {
         //cy.get('h1').contains('HELLO WORLD');
 
     });
+});
 
-Cypress.Commands.add('fillRegistrationForm', ()=> {
-    withinAirline(()=> {
+Cypress.Commands.add('fillEmailField', ()=> {
+    withinAirlineForm(()=> {
         cy.get('#email')
-        .type('jahangir.ali@easyjet.com');
-    })
-});
+        .type('jahangir.ali@easyjet.com')
+    });
+        });
 
-});
+
 
 

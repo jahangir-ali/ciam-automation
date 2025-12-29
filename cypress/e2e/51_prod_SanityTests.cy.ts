@@ -1,7 +1,7 @@
 import { contains } from "cypress/types/jquery";
 import { keys } from "cypress/types/lodash";
 
-describe('registration spec', () => {
+describe('prod Sign In Tests', () => {
   beforeEach(() => {
     cy.visit("https://www.easyjet.com/en/register");
     cy.window().clearCookies();
@@ -15,11 +15,13 @@ describe('registration spec', () => {
 
   })
 
- it.only('should display email field error', () => {
+/* it('should display email field error', () => {
   cy.get('#ensCloseBanner').click() 
+
    
-  cy.get('#email')
-    .type('test.com')
+  cy.fillEmailField();
+  //cy.get('#email')
+    //.type('test.com')
 
     cy.press(Cypress.Keyboard.Keys.TAB)
 
@@ -28,7 +30,7 @@ describe('registration spec', () => {
     .and('be.visible')
 
   })
-
+*/
 
 /*
   it('should accept the confirmation on popup modal', () => {
@@ -152,11 +154,30 @@ it('should tick the check box in Find Booking', () => {
     .click();
 })
 
-it('should login successfully', () => {
+it('should open and close sign in modal', () => {
     cy.get('#ensCloseBanner').click()
     cy.get('[data-testid="desktop-header-main-menu-test-id"] > .header-main-menu__right-section > .sign-in-button-wrapper > .sign-in-button > .sign-in-button__label').click();
-     
-})
+    
+    cy.get('.account-modals__close-icon')
+    .click();
+
+    cy.get('.main-menu-list > .header-main-menu__logo > img')
+    .click()
+
+    cy.get('#ensCloseBanner')
+    .click()
+
+    cy.url()
+    .should('eq', 'https://www.easyjet.com/en')
+
+  })
+
+  it('should open Manage Bookings Sign In modal', () => {
+    cy.get('#ensCloseBanner').click()
+    cy.get(':nth-child(2) > .header-top-bar__item > p')
+    .click()
+
+  })
 
 })
 
