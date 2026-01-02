@@ -460,11 +460,43 @@ it('should confirm TR language url', () => {
     .should('eq', 'https://www.easyjet.com/tr')
 })
 
-/////////////////////////////////END OF LANGAGUES //////////////
+/////////////////////////////////End Of Languages //////////////
+
+it.only('should click Show Flights button', () => {
+  
+  cy.visit("https://www.easyjet.com/en");
+
+  cy.get('#ensCloseBanner').click()
+   
+  cy.get('[data-testid="to"]')
+    .type('EDI{enter}')
+
+    cy.get('[data-testid="airport-label"]')
+  .click()
+
+cy.get('[data-testid="when"]')
+.click()
+
+  cy.get('[data-testid="30-1-2026"]')
+  .click()
+
+  cy.get('.SearchPod_buttonInnerContent__KMLdD')
+  .click()
+
+//Step 2 - Pick Flights
+cy.wait(5000)
+
+cy.get('[data-cy="lowestFareLabel"] > .PromoInfo_promoInfo__zqn_h > .PromoInfo_promoLabel__Rw0Ly')
+.click()
+
+  //cy.get('[data-cy="basket-continue-button"]')
+  //.click()
 
 
 })
 
+
+})
 
 
 
