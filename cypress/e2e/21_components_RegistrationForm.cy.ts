@@ -19,13 +19,24 @@ describe('registration spec', () => {
 
   })
 
+it('should display MFA authenticate title', () => {
+    
+    cy.get('#registration-form')
+    .click()
+
+cy.verifyMFAauthenticateTitle();
+
+    cy.get('#component-airline > h3')
+    .should('be.visible')
+    .contains('Registration Form Component')
+
+  })
+
   it('should display MFA Text', () => {
     cy.verifyMFAText();
   })
 
-  it('should display MFA authenticate title', () => {
-    cy.verifyMFAauthenticateTitle();
-  })
+  
 
   
 

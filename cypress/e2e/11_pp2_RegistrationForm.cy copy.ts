@@ -19,8 +19,11 @@ describe('registration spec', () => {
 
   })
 
-  it('should display MFA Text', () => {
+  it.only('should display MFA Text', () => {
     cy.verifyMFAText();
+
+    cy.get('.info-box')
+    .should('contain', 'When you register for an account, Multi-Factor (MFA) will be automatically enabled')
   })
 
   it('should display MFA authenticate title', () => {
