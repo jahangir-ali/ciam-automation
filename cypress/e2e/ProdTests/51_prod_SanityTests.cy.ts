@@ -462,7 +462,7 @@ it('should confirm TR language url', () => {
 
 /////////////////////////////////End Of Languages //////////////
 
-it.only('should click Show Flights button', () => {
+it('should click Show Flights button', () => {
   
   cy.visit("https://www.easyjet.com/en");
 

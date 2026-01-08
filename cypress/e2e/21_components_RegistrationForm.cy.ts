@@ -33,7 +33,12 @@ cy.verifyMFAauthenticateTitle();
   })
 
   it('should display MFA Text', () => {
+    
+    cy.get('#registration-form')
+    .click()
+    
     cy.verifyMFAText();
+
   })
 
   
