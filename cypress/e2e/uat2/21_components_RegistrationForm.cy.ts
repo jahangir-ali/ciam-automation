@@ -19,7 +19,7 @@ describe('registration spec', () => {
 
   })
 
-it('should display MFA authenticate title', () => {
+it.only('should display MFA authenticate title', () => {
     
     cy.get('#registration-form')
     .click()

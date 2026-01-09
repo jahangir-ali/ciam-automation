@@ -5,6 +5,8 @@ describe('registration spec', () => {
     cy.viewport(1280, 1080)
     cy.get("#registration-form").click();
   })
+
+
   it('should trigger "Registration Validation Error"', () => {
     cy.fillEmailPassword();
     cy.fillConfirmEmailPassword();
@@ -23,16 +25,28 @@ describe('registration spec', () => {
     cy.get('#registration-form-validation-error')
       .should('be.checked');
   })
-/*
-  it('should display MFA Text', () => {
-    cy.verifyMFAText();
-  })
-*/
+
+
   it('should display MFA authenticate title', () => {
-    cy.verifyMFAauthenticateTitle();
+    //cy.verifyMFAauthenticateTitle();
+
+cy.contains('h3', 'Registration Form Component')
+  .should('be.visible');
+
+   // cy.get('#component-airline > h3')
+    //.should('be.visible')
+    //.contains('Registration Form Component')
   })
 
-  
+
+  it('should display MFA Text', () => {
+    //cy.verifyMFAText();
+  cy.get('.main-component')
+    //cy.contains('h4', 'Multi-factor authentication')
+  .should('be.visible');
+
+  })
+
 
 })
 

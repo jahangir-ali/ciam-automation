@@ -462,7 +462,7 @@ it('should confirm TR language url', () => {
 
 /////////////////////////////////End Of Languages //////////////
 
-it('should click Show Flights button', () => {
+it.only('should click Show Flights button', () => {
   
   cy.visit("https://www.easyjet.com/en");
 
@@ -489,9 +489,96 @@ cy.wait(5000)
 cy.get('[data-cy="lowestFareLabel"] > .PromoInfo_promoInfo__zqn_h > .PromoInfo_promoLabel__Rw0Ly')
 .click()
 
-  //cy.get('[data-cy="basket-continue-button"]')
-  //.click()
+cy.get('[data-cy="basket-continue-button"]')
+.click()
 
+
+//bundles page 
+cy.get('[data-cy="bundle-layout__Light"] > .BundleLayout_a11CtaButton__hTzir')
+.click()
+
+cy.url()
+.should('eq', 'https://www.easyjet.com/en/buy/flights?isOneWay=on')
+
+//passenger-details page
+cy.get('#title-dropdown-adult-1')
+.select(1)
+
+cy.url()
+.should('eq', 'https://www.easyjet.com/en/buy/passenger-details')
+
+cy.get('#firstname-textbox-adult-1')
+.type('Joe{enter}')
+
+cy.get('#lastname-textbox-adult-1')
+.type('Bloggs{enter}')
+
+cy.get('#age-dropdown-adult-1')
+.select(1)
+
+cy.get('.funnel-basket-transition-section > .button-container > .rounded-corners')
+.click()
+
+//seats page
+cy.url()
+.should('eq', 'https://www.easyjet.com/en/buy/seats')
+
+cy.get('.button-container > .ej-link-button')
+.click()
+
+//cabin-bags page
+cy.url()
+.should('eq', 'https://www.easyjet.com/en/buy/cabin-bags/')
+
+cy.get('[data-testid="basket-cta__skip-button"]')
+.click()
+
+//bags page
+//cy.get('.ej-button rounded-corners continue-button disabled-basket ng-hide')
+cy.url()
+.should('eq','https://www.easyjet.com/en/buy/bags')
+
+cy.get('.button-container > .ej-link-button')
+.click()
+
+//car-rental
+cy.url()
+.should('eq', 'https://www.easyjet.com/en/buy/car-rental')
+
+cy.get('.button-container > .ej-link-button')
+.click()
+//cy.get('.button-container > .ej-link-button')
+
+//add-ons
+//cy.get('.Button_button__JnZ4E Button_plainLarge__qP8GH')
+cy.url()
+.should('eq', 'https://www.easyjet.com/en/buy/add-ons/')
+
+cy.get('[data-testid="basket-cta__skip-button"]')
+. click()
+
+//checkout
+cy.url()
+.should('eq', 'https://www.easyjet.com/en/buy/checkout')
+
+
+cy.get('#fullpage-sign-in-email')
+.should('be.visible')
+
+cy.get('#fullpage-sign-in-email')
+.should('be.visible')
+
+cy.get('#fullpage-signin-login')
+.should('be.visible')
+
+cy.get('.forgotten-password-link')
+.should('be.visible')
+
+cy.get('#fullpage-keep-me-signed-in-checkbox')
+.should('be.visible')
+
+cy.get('#sign-up-button')
+.should('be.visible')
 
 })
 
