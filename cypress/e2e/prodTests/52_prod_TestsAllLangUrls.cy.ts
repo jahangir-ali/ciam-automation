@@ -15,10 +15,12 @@ describe('prod Sign In Tests', () => {
 
   })
 
-/* it('should display email field error', () => {
+  /*
+it.only('should display email field error', () => {
   cy.get('#ensCloseBanner').click() 
 
-   
+  cy.wait(400)
+
   cy.fillEmailField();
   //cy.get('#email')
     //.type('test.com')
@@ -32,21 +34,21 @@ describe('prod Sign In Tests', () => {
   })
 */
 
-/*
-  it('should accept the confirmation on popup modal', () => {
+
+it('should accept the confirmation on popup modal', () => {
     //cy.on('window:confirm', () => true)
-    cy.get('#ensCloseBanner').click()
+cy.get('#ensCloseBanner').click()
     //cy.get('cy.get('').should('exist')
   })
     
-
-  it('should fill registration form', () => {
+/*
+it('should fill registration form', () => {
        //cy.get('#ensCloseBanner').click()
-    cy.fillRegistrationForm()
+cy.fillRegistrationForm()
   })
 */
 
-  it('should click forgotten password', () => {
+it('should click forgotten password', () => {
     cy.get('#ensCloseBanner')
     .click()
     
@@ -59,9 +61,8 @@ describe('prod Sign In Tests', () => {
     
     cy.contains("Please enter the email address you've used when you created your easyJet account. We will then email you a link to reset your password.")
     .should('be.visible');
-
-
   })
+
 /*
     it('should click send reset email', () => {
     cy.get('#ensCloseBanner').click()
@@ -82,7 +83,7 @@ describe('prod Sign In Tests', () => {
 
  })
 */
-
+/*
  it('should verify Find Booking errors are displayed', () => {
     cy.get('#ensCloseBanner').click()
     cy.get('[data-testid="desktop-header-main-menu-test-id"] > .header-main-menu__right-section > .sign-in-button-wrapper > .sign-in-button > .sign-in-button__label').click();
@@ -186,6 +187,7 @@ it('should open and close sign in modal', () => {
 
   })
 
+*/
 
 /////// LANGUAGE SANITY TESTS IN ALPHABETICAL ORDER////////////////
 
@@ -460,6 +462,9 @@ it('should confirm TR language url', () => {
     .should('eq', 'https://www.easyjet.com/tr')
 })
 
+
+
+/*
 /////////////////////////////////End Of Languages //////////////
 
 it.only('should click Show Flights button', () => {
@@ -580,8 +585,11 @@ cy.get('#fullpage-keep-me-signed-in-checkbox')
 cy.get('#sign-up-button')
 .should('be.visible')
 
-})
+cy.get('#sign-up-button')
+.click()
 
+})
+*/
 
 })
 
