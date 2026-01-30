@@ -15,29 +15,12 @@ describe('prod Sign In Tests', () => {
 
   })
 
-  /*
-it.only('should display email field error', () => {
-  cy.get('#ensCloseBanner').click() 
 
-  cy.wait(400)
-
-  cy.fillEmailField();
-  //cy.get('#email')
-    //.type('test.com')
-
-    cy.press(Cypress.Keyboard.Keys.TAB)
-
-    cy.get('.field-error__content-message')
-    .should('exist')
-    .and('be.visible')
-
-  })
-*/
 
 
 it('should accept the confirmation on popup modal', () => {
     //cy.on('window:confirm', () => true)
-cy.get('#ensCloseBanner').click()
+cy.get('#ensAcceptAll').click()
     //cy.get('cy.get('').should('exist')
   })
     
@@ -49,7 +32,7 @@ cy.fillRegistrationForm()
 */
 
 it('should click forgotten password', () => {
-    cy.get('#ensCloseBanner')
+    cy.get('#ensAcceptAll')
     .click()
     
     cy.get('[data-testid="desktop-header-main-menu-test-id"] > .header-main-menu__right-section > .sign-in-button-wrapper > .sign-in-button > .sign-in-button__label')
@@ -192,7 +175,7 @@ it('should open and close sign in modal', () => {
 /////// LANGUAGE SANITY TESTS IN ALPHABETICAL ORDER////////////////
 
 it('should confirm CA language url', () => {
-    cy.get('#ensCloseBanner').click()
+    cy.get('#ensAcceptAll').click()
     cy.get('.language-selector')
     .click()
 
@@ -209,7 +192,7 @@ it('should confirm CA language url', () => {
 
 
 it('should confirm CH-FR Swiss language url', () => {
-    cy.get('#ensCloseBanner').click()
+    cy.get('#ensAcceptAll').click()
     cy.get('.language-selector')
     .click()
 
@@ -226,7 +209,7 @@ it('should confirm CH-FR Swiss language url', () => {
 
 
 it('should confirm CH-DE Swiss language url', () => {
-    cy.get('#ensCloseBanner').click()
+    cy.get('#ensAcceptAll').click()
     cy.get('.language-selector')
     .click()
 
@@ -243,7 +226,7 @@ it('should confirm CH-DE Swiss language url', () => {
 
 
 it('should confirm CS language url', () => {
-    cy.get('#ensCloseBanner').click()
+    cy.get('#ensAcceptAll').click()
     cy.get('.language-selector')
     .click()
 
@@ -260,7 +243,7 @@ it('should confirm CS language url', () => {
 
 
 it('should confirm DA language url', () => {
-    cy.get('#ensCloseBanner').click()
+    cy.get('#ensAcceptAll').click()
     cy.get('.language-selector')
     .click()
 
@@ -277,7 +260,7 @@ it('should confirm DA language url', () => {
 
 
 it('should confirm DE language url', () => {
-    cy.get('#ensCloseBanner').click()
+    cy.get('#ensAcceptAll').click()
     cy.get('.language-selector')
     .click()
 
@@ -294,7 +277,7 @@ it('should confirm DE language url', () => {
 
 
 it('should confirm EL language url', () => {
-    cy.get('#ensCloseBanner').click()
+    cy.get('#ensAcceptAll').click()
     cy.get('.language-selector')
     .click()
 
@@ -311,7 +294,7 @@ it('should confirm EL language url', () => {
 
 
 it('should confirm ES language url', () => {
-    cy.get('#ensCloseBanner').click()
+    cy.get('#ensAcceptAll').click()
     cy.get('.language-selector')
     .click()
 
@@ -328,7 +311,7 @@ it('should confirm ES language url', () => {
 
 
  it('should confirm FR language url', () => {
-    cy.get('#ensCloseBanner').click()
+    cy.get('#ensAcceptAll').click()
     cy.get('.language-selector')
     .click()
 
@@ -346,7 +329,7 @@ it('should confirm ES language url', () => {
 
 
 it('should confirm HU language url', () => {
-    cy.get('#ensCloseBanner').click()
+    cy.get('#ensAcceptAll').click()
     cy.get('.language-selector')
     .click()
 
@@ -363,7 +346,7 @@ it('should confirm HU language url', () => {
 
 
 it('should confirm IL language url', () => {
-    cy.get('#ensCloseBanner').click()
+    cy.get('#ensAcceptAll').click()
     cy.get('.language-selector')
     .click()
 
@@ -380,7 +363,7 @@ it('should confirm IL language url', () => {
 
 
 it('should confirm IT language url', () => {
-    cy.get('#ensCloseBanner').click()
+    cy.get('#ensAcceptAll').click()
     cy.get('.language-selector')
     .click()
 
@@ -396,8 +379,8 @@ it('should confirm IT language url', () => {
 }) 
 
 
-it('should confirm NL language url', () => {
-    cy.get('#ensCloseBanner').click()
+it.only('should confirm NL language url', () => {
+    cy.get('#ensAcceptAll').click()
     cy.get('.language-selector')
     .click()
 
@@ -415,7 +398,7 @@ it('should confirm NL language url', () => {
 
 
 it('should confirm PL language url', () => {
-    cy.get('#ensCloseBanner').click()
+    cy.get('#ensAcceptAll').click()
     cy.get('.language-selector')
     .click()
 
@@ -430,8 +413,8 @@ it('should confirm PL language url', () => {
     .should('eq', 'https://www.easyjet.com/pl')
 })
 
-it('should confirm PT language url', () => {
-    cy.get('#ensCloseBanner').click()
+it.only('should confirm PT language url', () => {
+    cy.get('#ensAcceptAll').click()
     cy.get('.language-selector')
     .click()
 
@@ -447,7 +430,7 @@ it('should confirm PT language url', () => {
 })
 
 it('should confirm TR language url', () => {
-    cy.get('#ensCloseBanner').click()
+    cy.get('#ensAcceptAll').click()
     cy.get('.language-selector')
     .click()
 

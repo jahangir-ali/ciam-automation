@@ -8,9 +8,9 @@ describe('registration spec', () => {
     cy.fillEmailPassword();
     cy.fillConfirmEmailPassword();
     cy.fillRegistrationForm();
-    
+
     cy.get('#registration-form-validation-error')
-    .should('be.checked');
+      .should('be.checked');
 
   })
 

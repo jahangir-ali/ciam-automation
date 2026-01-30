@@ -53,7 +53,8 @@ declare global {
       verifyRegFormComponentTitle(): Chainable<any>
       verifyMFAauthenticateTitle(): Chainable<any>
       verifyMFAText(): Chainable<any>
-      //fillEmailField(): Chainable<any>
+      fillEmailField(): Chainable<any>
+      mfaIcon(): Chainable<any>
 
     }
   }

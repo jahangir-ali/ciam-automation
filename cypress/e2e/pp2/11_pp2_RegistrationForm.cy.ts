@@ -8,13 +8,14 @@ describe('registration spec', () => {
 
   it('should confirm correct url', () => {
     cy.url().should('eq', 'https://preprod2.test.easyjet.com/en/register')
-    
+
+
 
   })
 
 
   it('should accept the confirmation on popup modal', () => {
-    cy.on('window:confirm', () => true)
+    cy.get('#ensNotifyBannerInner > .ensButtons > #ensAcceptAll')
     
 
   })

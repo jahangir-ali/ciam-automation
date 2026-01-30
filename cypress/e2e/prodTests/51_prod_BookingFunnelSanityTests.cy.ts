@@ -47,7 +47,7 @@ describe('prod Sign In Tests', () => {
 */
 
   it('should click forgotten password', () => {
-    cy.get('#ensCloseBanner')
+    cy.get('#ensAcceptAll')
     .click()
     
     cy.get('[data-testid="desktop-header-main-menu-test-id"] > .header-main-menu__right-section > .sign-in-button-wrapper > .sign-in-button > .sign-in-button__label')
@@ -84,7 +84,7 @@ describe('prod Sign In Tests', () => {
 */
 
  it('should verify Find Booking errors are displayed', () => {
-    cy.get('#ensCloseBanner').click()
+    cy.get('#ensAcceptAll').click()
     cy.get('[data-testid="desktop-header-main-menu-test-id"] > .header-main-menu__right-section > .sign-in-button-wrapper > .sign-in-button > .sign-in-button__label').click();
         
     //switches to FindBooking tab
@@ -104,7 +104,7 @@ describe('prod Sign In Tests', () => {
  })
 
 it('should tick the check box in Find Booking', () => {
-    cy.get('#ensCloseBanner').click()
+    cy.get('#ensAcceptAll').click()
     cy.get('[data-testid="desktop-header-main-menu-test-id"] > .header-main-menu__right-section > .sign-in-button-wrapper > .sign-in-button > .sign-in-button__label').click();
 
     //switches to FindBooking tab
@@ -117,7 +117,7 @@ it('should tick the check box in Find Booking', () => {
   })
 
   it('should attempt to login with expired booking', () => {
-    cy.get('#ensCloseBanner').click()
+    cy.get('#ensAcceptAll').click()
     cy.get('[data-testid="desktop-header-main-menu-test-id"] > .header-main-menu__right-section > .sign-in-button-wrapper > .sign-in-button > .sign-in-button__label').click();
 
     //switches to FindBooking tab
@@ -145,7 +145,7 @@ it('should tick the check box in Find Booking', () => {
 
 
  it('should attempt to login with incorrect password', () => {
-    cy.get('#ensCloseBanner').click()
+    cy.get('#ensAcceptAll').click()
     cy.get('[data-testid="desktop-header-main-menu-test-id"] > .header-main-menu__right-section > .sign-in-button-wrapper > .sign-in-button > .sign-in-button__label').click();
 
     //email
@@ -162,7 +162,7 @@ it('should tick the check box in Find Booking', () => {
 })
 
 it('should open and close sign in modal', () => {
-    cy.get('#ensCloseBanner').click()
+    cy.get('#ensAcceptAll').click()
     cy.get('[data-testid="desktop-header-main-menu-test-id"] > .header-main-menu__right-section > .sign-in-button-wrapper > .sign-in-button > .sign-in-button__label').click();
     
     cy.get('.account-modals__close-icon')
@@ -171,7 +171,7 @@ it('should open and close sign in modal', () => {
     cy.get('.main-menu-list > .header-main-menu__logo > img')
     .click()
 
-    cy.get('#ensCloseBanner')
+    cy.get('#ensAcceptAll')
     .click()
 
     cy.url()
@@ -180,7 +180,7 @@ it('should open and close sign in modal', () => {
   })
 
   it('should open Manage Bookings Sign In modal', () => {
-    cy.get('#ensCloseBanner').click()
+    cy.get('#ensAcceptAll').click()
     cy.get(':nth-child(2) > .header-top-bar__item > p')
     .click()
 
@@ -191,7 +191,7 @@ it('should click Show Flights button', () => {
   
   cy.visit("https://www.easyjet.com/en");
 
-  cy.get('#ensCloseBanner').click()
+  cy.get('#ensAcceptAll').click()
    
   cy.get('[data-testid="to"]')
     .type('EDI{enter}')
