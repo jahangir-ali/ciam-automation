@@ -1,4 +1,4 @@
-const locales = ['en'];  
+const locales = ['en' ];  
 // 'es', 'pt' ,'fr'
 locales.forEach((locale) => {
 
@@ -15,10 +15,11 @@ locales.forEach((locale) => {
     });
 
     it('should accept the confirmation on popup modal', () => {
-      cy.get('#ensNotifyBannerInner > .ensButtons > #ensAcceptAll');
+      cy.get('#ensNotifyBannerInner > .ensButtons > #ensAcceptAll')
+      .click();
     });
 
-    it('should trigger "Login to My Account"', () => {
+    it('should trigger "Login to View Bookings"', () => {
       cy.get('#ensNotifyBannerInner > .ensButtons > #ensAcceptAll')
         .click();
 
@@ -42,17 +43,17 @@ locales.forEach((locale) => {
         .click();
 
       cy.get('[data-testid="dropdown-menu-link"]')
-        .eq(6)      
+        .eq(0)      
         .click();
 
     it('should confirm correct url', () => {
-      cy.url().should('include', '/my-account/voucher-wallet?');
+      cy.url().should('include', '/my-bookings?');
+      
     });    
 
+    
 
     });
-
-    
 
   });
 
