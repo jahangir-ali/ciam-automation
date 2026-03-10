@@ -1,45 +1,35 @@
-import { contains } from "cypress/types/jquery";
-import { keys } from "cypress/types/lodash";
+const languages = ['en', 'it'];
 
 describe('prod Sign In Tests', () => {
-  beforeEach(() => {
-    cy.visit("https://www.easyjet.com/en/register");
-    cy.window().clearCookies();
-    cy.viewport(1280, 1080)
-    //cy.get('#ensCloseBanner').click()
- 
-  })
 
-  it('should confirm correct url', () => {
-    cy.url().should('eq', 'https://www.easyjet.com/en/register')
+  languages.forEach((lang) => {
 
-  })
+    it(`SignIn Login - ${lang.toUpperCase()}`, () => {
 
-it('should display email field error', () => {
-  cy.get('#ensAcceptAll').click() 
+      cy.visit(`https://www.easyjet.com/${lang}`);
 
-  cy.wait(400)
+      cy.window().clearCookies();
+      cy.viewport(1280, 1080);
 
-  //cy.fillEmailField();
-  cy.get('.sign-in-button__label')
-    //.type('test.com')
+      cy.get('#ensAcceptAll').click();
 
-  cy.press(Cypress.Keyboard.Keys.TAB)
-/*
-  cy.get('.field-error__content-message')
-    .should('exist')
-    .and('be.visible')
-*/
-  })
+        cy.get(':nth-child(3) > .header-top-bar__item > p')
+      //cy.get('[data-testid="desktop-header-main-menu-test-id"] > .header-main-menu__right-section > .sign-in-button-wrapper > .sign-in-button')
+        .click();
 
+      cy.get('#\\34 22a73e2-dc73-44f0-a458-d92da49b8502')
+        .type('akuma.ali+10a@gmail.com');
 
-it('SignIn Invalid Login', () => {
-  cy.get('#ensAcceptAll').click()
-  cy.get('[data-testid="desktop-header-main-menu-test-id"] > .header-main-menu__right-section > .sign-in-button-wrapper > .sign-in-button')
-  .click() 
+      cy.get('#\\36 838ac1e-0be0-4b4e-b676-5cd0c04fe41e')
+        .type('Testing1234567890');
 
+      cy.get('#KEEP_ME_SIGNED_IN_CHECKED_ID')
+        .click();
 
-})
+      cy.get('.account-modal__cta')
+        .click();
 
-
-})
+      // language-specific assertions can go here
+    });
+  });
+});
