@@ -13,7 +13,8 @@ describe('prod Sign In Tests', () => {
 
       cy.get('#ensAcceptAll').click();
 
-        cy.get(':nth-child(3) > .header-top-bar__item > p')
+      cy.get(':nth-child(3) > .header-top-bar__item > p')
+      //  cy.get(':nth-child(3) > .header-top-bar__item > p')
       //cy.get('[data-testid="desktop-header-main-menu-test-id"] > .header-main-menu__right-section > .sign-in-button-wrapper > .sign-in-button')
         .click();
 

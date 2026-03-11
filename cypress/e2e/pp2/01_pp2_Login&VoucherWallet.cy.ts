@@ -27,7 +27,7 @@ locales.forEach((locale) => {
         .click();
 
       cy.get('#\\34 22a73e2-dc73-44f0-a458-d92da49b8502')
-        .type('jahangir.ali@easyjet.com');
+        .type('akuma.ali@gmail.com');
 
       cy.get('#\\36 838ac1e-0be0-4b4e-b676-5cd0c04fe41e')
         .type('Testing1234567890');

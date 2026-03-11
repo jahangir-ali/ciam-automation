@@ -15,12 +15,12 @@ function runForgottenPasswordFlow(lang) {
   cy.get('.shadow-root-trap')
     .shadow()
     .find('#email')
-    .type('jahangir.ali@easyjet.com');
+    .type('akuma.ali@mail.com');
 
   cy.get('.shadow-root-trap')
     .shadow()
     .find('#confirmEmail')
-    .type('jahangir.ali@easyjet.com');
+    .type('akuma.ali@gmail.com');
 
   cy.get('.shadow-root-trap')
     .shadow()

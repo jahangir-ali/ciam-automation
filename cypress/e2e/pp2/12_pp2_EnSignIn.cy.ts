@@ -24,7 +24,7 @@ it.only('should click on Sign In and login', () => {
   .click()
 
   cy.get('#\\34 22a73e2-dc73-44f0-a458-d92da49b8502')
-  .type('akuma.ali+pt@gmail.com{enter}')
+  .type('akuma.ali@gmail.com{enter}')
   
 
   cy.get('#6838ac1e-0be0-4b4e-b676-5cd0c04fe41e')
