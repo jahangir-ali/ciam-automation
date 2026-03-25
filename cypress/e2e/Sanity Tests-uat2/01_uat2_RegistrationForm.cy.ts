@@ -18,12 +18,19 @@ describe('registration spec', () => {
     cy.get('#ensNotifyBannerInner > .ensButtons > #ensAcceptAll')
   })
 
+
+
+ it('should create a new account', () => {
+    
+    cy.fillRegistrationForm()
+
+})
+
   it('should confirm International dialling code', () => {
     
     cy.clickIntDiallingCode()
 
 })
-
 
 })
 

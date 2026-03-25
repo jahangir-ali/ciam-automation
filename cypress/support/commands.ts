@@ -111,6 +111,9 @@ Cypress.Commands.add('clickAirlineSubmit', () => {
 
 Cypress.Commands.add('fillRegistrationForm', () => {
     withinAirline(() => {
+        cy.get('#email').type('akuma.ali@gmail.com');
+        cy.get('#password').type('Testing12345' );
+        cy.get('#confirmPassword').type('Testing12345');
         cy.get('#title').click();
         cy.get('#title-option-0').click();
         cy.get("#firstName").type("John");
