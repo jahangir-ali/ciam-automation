@@ -1,6 +1,6 @@
 describe('registration spec', () => {
   beforeEach(() => {
-    cy.visit("https://uat2.tc-nonprod.easyjet.com/ciam/components/website/index.html?");
+    cy.visit("https://uat2.tc-nonprod.easyjet.com/ciam/components/website/index.html");
     cy.window().clearCookies();
     cy.viewport(1280, 1080)
     
@@ -19,7 +19,7 @@ describe('registration spec', () => {
 
   })
 
-it.only('should display MFA authenticate title', () => {
+it('should display MFA authenticate title', () => {
     
     cy.get('#registration-form')
     .click()
@@ -41,7 +41,18 @@ cy.verifyMFAauthenticateTitle();
 
   })
 
-  
+   it('should check phone code', () => {
+    cy.get('#registration-form')
+    .click()
+
+    cy.get('#internationalDialingCode')
+    .click()
+
+    cy.type('curacao')
+    
+    
+
+  })
 
   
 

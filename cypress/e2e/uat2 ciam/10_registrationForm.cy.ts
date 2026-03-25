@@ -1,6 +1,6 @@
 describe('registration spec', () => {
   beforeEach(() => {
-    cy.visit("https://uat2.tc-nonprod.easyjet.com/ciam/website/index.html");
+    cy.visit("https://uat2.tc-nonprod.easyjet.com/ciam/components/website/index.html");
     cy.window().clearCookies();
     cy.viewport(1280, 1080)
     cy.get("#registration-form").click();
@@ -47,7 +47,16 @@ cy.contains('h3', 'Registration Form Component')
 
   })
 
+ it('should confirm International dialling code', () => {
+    
+    cy.clickIntDiallingCode()
+
+   // .should('have.value', 'Curacao (+599)')
+   .invoke('attr', 'aria-activedescendant')
+  .should('eq', 'internationalDialingCode-option-57')
+  
+
 
 })
 
-
+})

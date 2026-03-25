@@ -55,6 +55,7 @@ declare global {
       verifyMFAText(): Chainable<any>
       fillEmailField(): Chainable<any>
       mfaIcon(): Chainable<any>
+      clickIntDiallingCode(): Chainable<any>
 
     }
   }

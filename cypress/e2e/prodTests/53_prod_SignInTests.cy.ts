@@ -1,3 +1,5 @@
+import config from '../../support/config';
+
 const languages = ['en', 'it'];
 
 describe('prod Sign In Tests', () => {
@@ -6,7 +8,8 @@ describe('prod Sign In Tests', () => {
 
     it(`SignIn Login - ${lang.toUpperCase()}`, () => {
 
-      cy.visit(`https://www.easyjet.com/${lang}`);
+      //cy.visit(`https://www.easyjet.com/${lang}`);
+      cy.visit(`${config.prod.baseUrl}/${lang}`);
 
       cy.window().clearCookies();
       cy.viewport(1280, 1080);

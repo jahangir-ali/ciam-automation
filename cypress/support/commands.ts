@@ -126,6 +126,13 @@ Cypress.Commands.add('fillRegistrationForm', () => {
     });
 });
 
+Cypress.Commands.add('clickIntDiallingCode', () => {
+    withinAirline(() => {
+     cy.get('input[name="internationalDialingCode"]', { timeout: 10000 })
+    .type('cur{enter}');
+    })
+});
+
 Cypress.Commands.add('clickSubmitForgottenPassword', () => {
     withinAirline(() => {
         cy.get('button[type="submit"]').click();
@@ -297,7 +304,7 @@ Cypress.Commands.add('verifyMFAauthenticateTitle', () => {
     });
 });
 
-Cypress.Commands.add('fillEmailAddress', ()=> {
+Cypress.Commands.add('fillEmailField', ()=> {
     withinAirlineForm(()=> {
         cy.get('#email')
         .type('jahangir.ali@easyjet.com')
