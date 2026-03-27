@@ -1,13 +1,13 @@
 describe('registration spec', () => {
   beforeEach(() => {
-    cy.visit("https://uat2.tc-nonprod.easyjet.com/en/register");
+    cy.visit("https://fcore.test.easyjet.com/en/register");
     cy.window().clearCookies();
     cy.viewport(1280, 1080)
     cy.get('#ensNotifyBannerInner > .ensButtons > #ensAcceptAll').click()
   })
 
   it('should confirm correct url', () => {
-    cy.url().should('eq', 'https://uat2.tc-nonprod.easyjet.com/en/register')
+    cy.url().should('eq', 'https://fcore.test.easyjet.com/en/register')
 
 
 
@@ -31,6 +31,16 @@ describe('registration spec', () => {
     cy.clickIntDiallingCode()
 
 })
+
+it.only('should check all fields for validations', () =>{
+
+  cy.clickAirlineSubmit()
+
+  cy.get('data-testid="error-message"]')
+  .should('be.visible')
+
+})
+
 
 })
 
