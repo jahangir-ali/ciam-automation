@@ -51,7 +51,7 @@ locales.forEach((locale) => {
       cy.get('#ensNotifyBannerInner > .ensButtons > #ensAcceptAll')
         .click();
 
-      cy.get('[class="sign-in-button-wrapper"]')
+      cy.get('[data-testid="desktop-header-main-menu-test-id"] > .header-main-menu__right-section > .sign-in-button-wrapper > .sign-in-button > .sign-in-button__label')
         .click();
 
       cy.get('#\\34 22a73e2-dc73-44f0-a458-d92da49b8502')
