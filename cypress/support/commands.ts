@@ -113,19 +113,21 @@ Cypress.Commands.add('fillRegistrationForm', () => {
     withinAirline(() => {
         cy.get('#email').type('akuma.ali@gmail.com');
         cy.get('#password').type('Testing12345' );
+        cy.wait(1000)  //wait 1 second
         cy.get('#confirmPassword').type('Testing12345');
         cy.get('#title').click();
         cy.get('#title-option-0').click();
-        cy.get("#firstName").type("John");
-        cy.get("#lastName").type("Smith");
-        cy.get("#address").type("99 Park St");
-        cy.get("#addressContinued").type("Apt 2");
-        cy.get("#city").type("London");
-        cy.get("#postcode").type("W1K 7HA");
-        cy.get("#country").type("United Kingdom");
+        cy.get('#firstName').type('John');
+        cy.get('#lastName').type('Smith');
+        cy.get('#address').type('99 Park St');
+        cy.get('#addressContinued').type('Apt 2');
+        cy.get('#city').type('London');
+        cy.get('#postcode').type('W1K 7HA');
+        cy.get('#country').type('United Kingdom');
         cy.get('#country-option-0').click();
-        cy.get("#mobilePhoneNumber").type("7979429732");
-        cy.get('.button.button--primary.airline-form__submit-button').click();
+        cy.get('#mobilePhoneNumber').type('7979429732');
+        cy.get('#easyjetMarketing-Yes').click();
+        cy.get('button[part="airline-form__submit-button"]').click();
     });
 });
 

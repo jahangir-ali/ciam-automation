@@ -1,6 +1,7 @@
 describe('registration spec', () => {
   beforeEach(() => {
     cy.visit("https://fcore.test.easyjet.com/en/register");
+    
     cy.window().clearCookies();
     cy.viewport(1280, 1080)
     cy.get('#ensNotifyBannerInner > .ensButtons > #ensAcceptAll').click()
@@ -20,7 +21,7 @@ describe('registration spec', () => {
 
 
 
- it('should create a new account', () => {
+ it.only('should create a new account', () => {
     
     cy.fillRegistrationForm()
 
@@ -32,7 +33,7 @@ describe('registration spec', () => {
 
 })
 
-it.only('should check all fields for validations', () =>{
+it('should check all fields for validations', () =>{
 
   cy.clickAirlineSubmit()
 
