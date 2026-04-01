@@ -53,9 +53,9 @@ Cypress.Commands.add('fillEmailPassword', () => {
     withinAirline(() => {
         //cy.get('h1').contains('HELLO');
         cy.get("#email")
-            .type('jahangir.ali@easyjet.com');
+            .type('akuma.ali@gmail.com');
         cy.get("#password")
-            .type('Testing1234567890');
+            .type('Testing12345');
 
     });
 })
@@ -177,7 +177,7 @@ Cypress.Commands.add('clickConfirmHoliday', () => {
             .focus()
             .clear()
             .type('{selectall}{backspace}')
-            .type('jahangir.ali@easyjet.com')
+            .type('akuma.ali@gmail.com')
         cy.get('[aria-label="Confirm"]')
             .click();
     })
@@ -187,14 +187,14 @@ Cypress.Commands.add('clickConfirmHoliday', () => {
 Cypress.Commands.add('fillEarlyEmail', () => {
     withinAirlineEarlyLogin(() => {
         cy.get('#email')
-            .type('jahangir.ali@easyjet.com');
+            .type('akuma.ali@gmail.com');
     })
 });
 
 Cypress.Commands.add('fillEarlyPassword', () => {
     withinAirlineEarlyLogin(() => {
         cy.get('#password')
-            .type('Testing1234567890');
+            .type('Testing12345');
     })
 });
 
@@ -237,7 +237,7 @@ Cypress.Commands.add('clickHolidayOutFunnelCancel', () => {
 Cypress.Commands.add('fillHolidayOutFunnelEmail', () => {
     withinHolidayOutFunnel(() => {
         cy.get('#email')
-            .type('jahangir.ali@easyjet.com');
+            .type('akuma.ali@gmail.com');
     })
 });
 

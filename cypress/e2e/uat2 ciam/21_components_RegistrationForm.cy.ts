@@ -1,13 +1,13 @@
 describe('registration spec', () => {
   beforeEach(() => {
-    cy.visit("https://fcore.tc-nonprod.easyjet.com/ciam/components/website/index.html");
+    cy.visit("https://uat2.tc-nonprod.easyjet.com/ciam/website/index.html");
     cy.window().clearCookies();
     cy.viewport(1280, 1080)
     
   })
 
   it('should confirm correct url', () => {
-    cy.url().should('eq', 'https://fcore.tc-nonprod.easyjet.com/ciam/components/website/index.html?')
+    cy.url().should('eq', 'https://uat2.tc-nonprod.easyjet.com/ciam/website/index.html')
     
 
   })
