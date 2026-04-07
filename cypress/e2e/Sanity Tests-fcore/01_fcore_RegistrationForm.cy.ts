@@ -21,7 +21,7 @@ describe('registration spec', () => {
 
 
 
- it.only('should create a new account', () => {
+ it('should create a new account', () => {
     
     cy.fillRegistrationForm()
 
@@ -33,12 +33,27 @@ describe('registration spec', () => {
 
 })
 
-it('should check all fields for validations', () =>{
+it.only('should check all fields for validations', () =>{
 
   cy.clickAirlineSubmit()
 
-  cy.get('data-testid="error-message"]')
-  .should('be.visible')
+  cy.wait('@submit')
+cy.get('[data-testid="error-message"]').should('be.visible')
+
+})
+
+ it('should confirm International dialling code', () => {
+    
+    cy.clickIntDiallingCode()
+
+    //.should('have.value', 'Curacao (+599)')
+   // cy.get('input[name="internationalDialingCode"]')
+    //cy.get('.dropdown__display-value')
+  //.should('be.visible')
+  //.and('have.text', 'Curacao (+599)');
+  
+    cy.get('input[id="mobilePhoneNumber"]')
+      .type('0599 123456')
 
 })
 

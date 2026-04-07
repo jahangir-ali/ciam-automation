@@ -44,7 +44,7 @@ Cypress.Commands.add('fillEmailAddress', () => {
 Cypress.Commands.add('fillConfirmEmailAddress', () => {
     withinAirline(() => {
         cy.get("#confirmEmail")
-            .type('jahangir.ali@easyjet.com');
+            .type('akuma.ali@gmail.com');
 
     });
 })
@@ -134,7 +134,9 @@ Cypress.Commands.add('fillRegistrationForm', () => {
 Cypress.Commands.add('clickIntDiallingCode', () => {
     withinAirline(() => {
      cy.get('input[name="internationalDialingCode"]', { timeout: 10000 })
-    .type('cur{enter}');
+    .type('cur{enter}')
+    //.press(Cypress.Keyboard.Keys.TAB); 
+    
     })
 });
 
